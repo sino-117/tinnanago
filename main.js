@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const startButton = document.getElementById('start-button');
   startButton.addEventListener('click', Start);
   const start0Button = document.getElementById('start-0-button');
-  start0Button.addEventListener('click', load0, load1);
+  start0Button.addEventListener('click', load0);
   // const start1Button = document.getElementById('start-1-button');
   // start1Button.addEventListener('click', load1);
   // const start2Button = document.getElementById('start-2-button');
