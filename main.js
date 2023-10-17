@@ -31,19 +31,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 
-  const makeTextMesh = (text) => {
-    const textMesh = new THREE.Mesh(
-      new THREE.TextGeometry(text, {
-        font: font, // フォントを指定 (FontLoaderで読み込んだjson形式のフォント)
-        size: 0.1,   // 文字のサイズを指定
-        height: 0.01,  // 文字の厚さを指定
-      }),
-      new THREE.MeshBasicMaterial({
-        color: `#ccc`, // 文字の色
-      })
-    );
-    return textMesh;
-  };
+  // const makeTextMesh = (text) => {
+  //   const textMesh = new THREE.Mesh(
+  //     new THREE.TextGeometry(text, {
+  //       font: font, // フォントを指定 (FontLoaderで読み込んだjson形式のフォント)
+  //       size: 0.1,   // 文字のサイズを指定
+  //       height: 0.01,  // 文字の厚さを指定
+  //     }),
+  //     new THREE.MeshBasicMaterial({
+  //       color: `#ccc`, // 文字の色
+  //     })
+  //   );
+  //   return textMesh;
+  // };
 
   const setupMoviePlane1 = async (anchorIndex, url) => {
     const anchor = mindarThree.addAnchor(anchorIndex);
@@ -73,76 +73,76 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   };
 
-  const load1 = async () => {
+  // const load1 = async () => {
 
-    const videoSet = await makeVideoPlane1('assets/videos/veranda.mp4');
-    const anchor = mindarThree.addAnchor(1);
-    anchor.group.add(videoSet.plane);
-    anchor.onTargetFound = () => {
-      videoSet.video.play();
-    }
-    anchor.onTargetLost = () => {
-      videoSet.video.pause();
-    }
-    // const textMesh = makeTextMesh('Disney');
-    // anchor.group.add(textMesh);
+  //   const videoSet = await makeVideoPlane1('assets/videos/veranda.mp4');
+  //   const anchor = mindarThree.addAnchor(1);
+  //   anchor.group.add(videoSet.plane);
+  //   anchor.onTargetFound = () => {
+  //     videoSet.video.play();
+  //   }
+  //   anchor.onTargetLost = () => {
+  //     videoSet.video.pause();
+  //   }
+  //   // const textMesh = makeTextMesh('Disney');
+  //   // anchor.group.add(textMesh);
 
-  };
+  // };
 
-  const load2 = async () => {
+  // const load2 = async () => {
 
-    const videoSet = await makeVideoPlane1('assets/videos/27-19.mp4');
-    const anchor = mindarThree.addAnchor(2);
-    anchor.group.add(videoSet.plane);
-    anchor.onTargetFound = () => {
-      videoSet.video.play();
-    }
-    anchor.onTargetLost = () => {
-      videoSet.video.pause();
-    }
-    // const textMesh = makeTextMesh('Disney');
-    // anchor.group.add(textMesh);
+  //   const videoSet = await makeVideoPlane1('assets/videos/27-19.mp4');
+  //   const anchor = mindarThree.addAnchor(2);
+  //   anchor.group.add(videoSet.plane);
+  //   anchor.onTargetFound = () => {
+  //     videoSet.video.play();
+  //   }
+  //   anchor.onTargetLost = () => {
+  //     videoSet.video.pause();
+  //   }
+  //   // const textMesh = makeTextMesh('Disney');
+  //   // anchor.group.add(textMesh);
 
-  };
+  // };
 
-  const load3 = async () => {
+  // const load3 = async () => {
 
-    const videoSet = await makeVideoPlane1('assets/videos/33-2.mp4');
-    const anchor = mindarThree.addAnchor(3);
-    anchor.group.add(videoSet.plane);
-    anchor.onTargetFound = () => {
-      videoSet.video.play();
-    }
-    anchor.onTargetLost = () => {
-      videoSet.video.pause();
-    }
-    // const textMesh = makeTextMesh('Disney');
-    // anchor.group.add(textMesh);
+  //   const videoSet = await makeVideoPlane1('assets/videos/33-2.mp4');
+  //   const anchor = mindarThree.addAnchor(3);
+  //   anchor.group.add(videoSet.plane);
+  //   anchor.onTargetFound = () => {
+  //     videoSet.video.play();
+  //   }
+  //   anchor.onTargetLost = () => {
+  //     videoSet.video.pause();
+  //   }
+  //   // const textMesh = makeTextMesh('Disney');
+  //   // anchor.group.add(textMesh);
 
-  };
+  // };
 
-  const load4 = async () => {
+  // const load4 = async () => {
 
-    const videoSet = await makeVideoPlane1('assets/videos/connect.mp4');
-    const anchor = mindarThree.addAnchor(4);
-    anchor.group.add(videoSet.plane);
-    anchor.onTargetFound = () => {
-      videoSet.video.play();
-    }
-    anchor.onTargetLost = () => {
-      videoSet.video.pause();
-    }
-    // const textMesh = makeTextMesh('Disney');
-    // anchor.group.add(textMesh);
+  //   const videoSet = await makeVideoPlane1('assets/videos/connect.mp4');
+  //   const anchor = mindarThree.addAnchor(4);
+  //   anchor.group.add(videoSet.plane);
+  //   anchor.onTargetFound = () => {
+  //     videoSet.video.play();
+  //   }
+  //   anchor.onTargetLost = () => {
+  //     videoSet.video.pause();
+  //   }
+  //   // const textMesh = makeTextMesh('Disney');
+  //   // anchor.group.add(textMesh);
 
-  };
+  // };
 
 
   const Start = async () => {
 
     mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,
-      imageTargetSrc: './assets/targets/targets.mind',
+      imageTargetSrc: './assets/targets/idol.mind',
     });
     const { renderer, scene, camera } = mindarThree;
     await mindarThree.start();
@@ -164,12 +164,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   startButton.addEventListener('click', Start);
   const start0Button = document.getElementById('start-0-button');
   start0Button.addEventListener('click', load0, load1);
-  const start1Button = document.getElementById('start-1-button');
-  start1Button.addEventListener('click', load1);
-  const start2Button = document.getElementById('start-2-button');
-  start2Button.addEventListener('click', load2);
-  const start3Button = document.getElementById('start-3-button');
-  start3Button.addEventListener('click', load3);
-  const start4Button = document.getElementById('start-4-button');
-  start4Button.addEventListener('click', load4);
+  // const start1Button = document.getElementById('start-1-button');
+  // start1Button.addEventListener('click', load1);
+  // const start2Button = document.getElementById('start-2-button');
+  // start2Button.addEventListener('click', load2);
+  // const start3Button = document.getElementById('start-3-button');
+  // start3Button.addEventListener('click', load3);
+  // const start4Button = document.getElementById('start-4-button');
+  // start4Button.addEventListener('click', load4);
 });
