@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const load0 = async () => {
 
-    const videoSet = await makeVideoPlane1('assets/videos/idol_sabi.mp4');
+    const videoSet = await makeVideoPlane1('assets/videos/tinnanago.mp4');
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(videoSet.plane);
     anchor.onTargetFound = () => {
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,
-      imageTargetSrc: './assets/targets/idol.mind',
+      imageTargetSrc: './assets/targets/targets.mind',
     });
     const { renderer, scene, camera } = mindarThree;
     await mindarThree.start();
